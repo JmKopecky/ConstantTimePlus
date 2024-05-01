@@ -34,8 +34,27 @@ public class CourseContainer {
 
     //getter and setter methods
 
-    public ArrayList<Course> getCourses() {
+    public ArrayList<Course> getAllCourses() {
         return courses;
+    }
+
+    //return all courses that match to a given semester
+    public ArrayList<Course> getCoursesOfSemester(int semester) {
+        ArrayList<Course> output = new ArrayList<>();
+        for (Course course : courses) {
+            if (course.getSemester() == semester) output.add(course);
+        }
+        return output;
+    }
+
+    //returns a list of all semesters present
+    public ArrayList<Integer> getAllSemesters() {
+        ArrayList<Integer> output = new ArrayList<>();
+        for (Course course : courses) {
+            int semester = course.getSemester();
+            if (!output.contains(semester)) output.add(semester);
+        }
+        return output;
     }
 
     //try to add a course to the list, return false if anything goes wrong

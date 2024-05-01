@@ -6,6 +6,7 @@ public class Course {
     private String className;
     private String teacher;
     private double gpaLevel;
+    private int semester;
 
 
     public Course() {
@@ -14,13 +15,15 @@ public class Course {
         className = "COURSE_DEFAULT";
         teacher = "TEACHER_DEFAULT";
         gpaLevel = -1;
+        semester = 0;
     }
 
-    public Course(int grade, String className, String teacher, double gpaLevel) {
+    public Course(int grade, String className, String teacher, double gpaLevel, int semester) {
         this.grade = grade;
         this.className = className;
         this.teacher = teacher;
         this.gpaLevel = gpaLevel;
+        this.semester = semester;
     }
 
 
@@ -67,6 +70,14 @@ public class Course {
     }
     public double getGpaLevel() {
         return gpaLevel;
+    }
+
+    //getter and setter for semester
+    public void setSemester(int newSemester) {
+        this.semester = newSemester;
+    }
+    public int getSemester() {
+        return semester;
     }
 
 }
